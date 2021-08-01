@@ -1,0 +1,113 @@
+body
+{
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #181818;
+}
+
+#bloc_page
+{
+    width: 900px;
+    margin: auto;
+}
+
+/* Header */
+
+header
+{
+    background-color: rgb(98,117,127);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 10px 10px 10px;
+}
+
+#logo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+#logo img
+{
+    width: 50%;
+    height: 50%;
+}
+
+/* Navigation */
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+    width: 200px;
+    background-color: red;
+    padding-bottom: 20px;
+    margin: 20px 200px 30px 0;
+}
+
+nav li
+{
+    margin-right: 40px;
+    background-color: yellow;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color: white;
+    padding-bottom: 10px;
+    text-decoration: none;
+    background-color: blue;
+}
+
+nav a:hover
+{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+#carousel1
+{
+    background-color: burlywood;
+    display: flex;
+    text-align: center;
+}
+
+h1, p
+{
+    text-align: center;
+}
+
+
+
+/*------ Section deux ------*/
+.visuals
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
