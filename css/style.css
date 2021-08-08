@@ -2,13 +2,14 @@ body
 {
     font-family: 'Trebuchet MS', Arial, sans-serif;
     color: #181818;
+    margin: 0;
 }
 
-#bloc_page
+/* #bloc_page
 {
     width: 900px;
     margin: auto;
-}
+} */
 
 /* Header */
 
@@ -16,19 +17,24 @@ header
 {
     background-color: rgb(98,117,127);
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 10px 10px 10px 10px;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-#logo
+.header-nav
+{
+    width: 100%;
+}
+
+
+.logo
 {
     display: flex;
     flex-direction: row;
     align-items: baseline;
 }
 
-#logo img
+.logo img
 {
     width: 50%;
     height: 50%;
@@ -36,49 +42,61 @@ header
 
 /* Navigation */
 
+nav
+{
+    display: flex;
+    justify-content: center;
+}
+
 nav ul
 {
     list-style-type: none;
-    display: flex;
-    width: 200px;
-    background-color: red;
-    padding-bottom: 20px;
-    margin: 20px 200px 30px 0;
-}
-
-nav li
-{
-    margin-right: 40px;
-    background-color: yellow;
+    text-align: center;
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 nav a
-{
+{   
     font-size: 1.3em;
-    color: white;
-    padding-bottom: 10px;
+    color:white;
+    padding-bottom: 3px;
     text-decoration: none;
-    background-color: blue;
+    text-align: center;
 }
 
-nav a:hover
+li
 {
-    color: #760001;
-    border-bottom: 3px solid #760001;
+    display: inline-block;
+    margin-left: 20px;
 }
 
-#carousel1
-{
-    background-color: burlywood;
+/* img {
+	max-width: 100%;
+	height: auto;
+} */
+
+
+/*-----The best film------*/
+.imageVideo {
+    width: 100%;
+    height: 500px;
     display: flex;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
 }
-
-h1, p
-{
-    text-align: center;
+.imageVideo img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
 }
-
+/* .theBestFilm {
+	max-width: 30%;
+	height: auto;
+} */
 
 
 /*------ Section deux ------*/
@@ -87,6 +105,7 @@ h1, p
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor:pointer;
 }
 
 
@@ -101,13 +120,180 @@ h1, p
   background-color: rgba(0,0,0,0.8);
 }
 
+/*-----Modal------------- */
 
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
 }
 
-.active,
-.demo:hover {
-  opacity: 1;
+.modal-core {
+  display: flex;
+}
+
+.imagefilm {
+  width: 100%;
+  max-width: 10px;
+  height: auto;
+}
+
+/* #genre #date #rated #score #director #actors #duration #country #boxOffice #resume {
+  margin-top: 5px;
+} */
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: rgb(98,117,127);
+  color: white;
+}
+
+#title {
+  display: block;
+  font-size: 1.5em;
+  /* margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; */
+  font-weight: bold;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+.modal-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 4px;
+}
+
+.space-film {
+  display: flex;
+  justify-content: center;
+}
+
+/* Modal Footer */
+.modal-footer p {
+  /* padding: 2px 2px; */
+  background-color: rgb(98,117,127);
+  color: white;
+  font-style: italic;
+  margin: 0px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation Modal*/
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+
+/* For mobile phones:  source media query w3 schools css responsive design*/
+@media only screen and (max-width: 767px) {  /* on met 767 et non 768 pour que l'ipad qui est à 768 reste en format PC */
+
+    .logo {
+        max-width: 30%;
+        height: auto;
+    }
+
+    header
+    {
+    flex-direction: column;
+    align-items: center;
+    }
+
+    nav a
+    {   
+    align-items: center;
+    font-size: 1em;
+    padding-right: 10px;
+    padding-left: 10px;
+    }
+
+    .header-nav
+    {
+        align-items: center;
+    }
+
+    li
+    {
+        margin-left: 0px;
+    }
+
+    /*---MODAL----*/
+    .modal-core {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .modal-header {
+    width: 90%;
+    }
+
+    .modal-text {
+        font-size: 0.8em;
+    }
+    .modal-footer {
+        width: 100%;
+    }
+
+
+    /* .image-film {
+        width: 50%;
+        height: auto;
+    } */
 }
