@@ -1,23 +1,23 @@
 
 // // ----- MODAL MANAGEMENT -------
-function actionModal() {
+function actionModal(imageFilm, title, genre, date, rated, score, director, actors, duration, country, boxOffice, resume) {
     modal.style.display = "block";
     // --------- remplace le contenu du modal----------
-    document.getElementById('imageFilm').src = "https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg";
-    document.getElementById('imageFilm').alt = `Image de ${"mettre titre"}`
-    document.getElementById('title').innerHTML = "Avatar";
-    document.getElementById('genre').innerHTML = "<strong>Genres : </strong>" +"Action, Adventure, Fantasy";
-    document.getElementById('date').innerHTML = "<strong>Date de sortie : </strong>" +"2009";
-    document.getElementById('rated').innerHTML = "<strong>Note : </strong>"+"12";
-    document.getElementById('score').innerHTML = "<strong>Score IMDB : </strong>"+"7.8";
-    document.getElementById('director').innerHTML = "<strong>Réalisateur(s) : </strong>"+ "James Cameron";
-    document.getElementById('actors').innerHTML = "<strong>Acteurs : </strong>" +"CCH Pounder, Dileep Rao, Giovanni Ribisi, Jason Whyte, Joel David Moore, Laz Alonso, Matt Gerald, Michelle Rodriguez, Sam Worthington, Scott Lawrence, Sean Anthony Moran, Sigourney Weaver, Stephen Lang, Wes Studi, Zoe Saldana";
-    document.getElementById('duration').innerHTML = "<strong>Durée : </strong>"+"162"+" minutes";
-    document.getElementById('country').innerHTML = "<strong>Pays d'origine : </strong>"+"USA";
-    document.getElementById('boxOffice').innerHTML = "<strong>Box Office : </strong>"+"83%";
-    document.getElementById('resume').innerHTML = "<strong>Résumé : </strong>"+"A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.";
+    document.getElementById('imageFilm').src = imageFilm;
+    document.getElementById('imageFilm').alt = `Image de ${title}`
+    document.getElementById('title').innerHTML = title;
+    document.getElementById('genre').innerHTML = "<strong>Genres : </strong>" + genre;
+    document.getElementById('date').innerHTML = "<strong>Date de sortie : </strong>" + date;
+    document.getElementById('rated').innerHTML = "<strong>Note : </strong>"+ rated;
+    document.getElementById('score').innerHTML = "<strong>Score IMDB : </strong>"+ score;
+    document.getElementById('director').innerHTML = "<strong>Réalisateur(s) : </strong>"+ director;
+    document.getElementById('actors').innerHTML = "<strong>Acteurs : </strong>" + actors;
+    document.getElementById('duration').innerHTML = "<strong>Durée : </strong>"+ duration +" minutes";
+    document.getElementById('country').innerHTML = "<strong>Pays d'origine : </strong>"+ country;
+    document.getElementById('boxOffice').innerHTML = "<strong>Box Office : </strong>"+ boxOffice+"%";
+    document.getElementById('resume').innerHTML = "<strong>Résumé : </strong>"+ resume;
    
-} "https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+}
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -42,3 +42,20 @@ window.onclick = function(event) {
 // }
 
 // changeClick()
+
+// ---------onclick="plusSlides() management----------------
+let pageIndex = 1;
+showSlides(pageIndex);
+
+function plusSlides(n) {
+  showSlides(pageIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(pageIndex = n);
+}
+
+function showSlides(n) {
+  if (n <= 0) {pageIndex = 1;}
+  filmsOfTheYear(pageIndex)
+}

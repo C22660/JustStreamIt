@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="css/style.css" />
         <title>JustStreamIt</title>
         <script src="js/main.js" async></script>
-        <script src="js/exo.js" async></script>
+        <!-- <script src="js/mainOld.js" async></script> -->
+        <!-- <script src="js/exo.js" async></script> -->
         <script src="js/requetes.js" async></script>
     </head>
 
@@ -30,8 +31,14 @@
                 </nav>
     		</header>
            
-            <section class="imageVideo" >
-                <img class="theBestFilm" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" style="width:100%" alt="The best film"/>
+            <section class="bestFilmBody">
+                <div class="bestFilmImage" >
+                    <img class="theBestFilm" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" style="width:100%" alt="The best film"/>
+                </div>
+                <div class="titleBestFilm">
+                    <p>The best film</p>
+                    <img src="css/playbutton1_78491.svg" style="width:5%" alt="play_button"/>
+                </div>
             </section>
             
             <section id="carousel1">
@@ -43,14 +50,14 @@
             </section>
 
             <section id="carousel2">
-                <h1>Catégorie 1</h1>
+                <h1>Les films de l'année 2020</h1>
                 <p>Carousel 2</p>
                 <!-- Thumbnail images -->
                 <div class="visuals">
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <!-- <div class="row"> -->
-                    <div class="column">
-                        <img class="image 1 C2" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="The Woods">
+                    <div class="image_1_C2">
+                        <img class="image1 C2" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="The Woods">
                     </div>
                     <div class="image_2_C2">
                         <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Cinque Terre">
@@ -67,7 +74,7 @@
                     <div class="image_6_C2">
                         <img  src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Northern Lights">
                     </div>
-                    <div class="image 7 C2">
+                    <div class="image_7_C2">
                         <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Northern Lights">
                     </div>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
