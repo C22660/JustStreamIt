@@ -137,7 +137,7 @@ margin-right: 5px;
 } */
 
 
-/*------ Section deux ------*/
+/*------ Sections------*/
 .visuals
 {
   display: flex;
@@ -156,6 +156,23 @@ margin-right: 5px;
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
+}
+
+
+#Note1, #Note2, #Note3, #Note4, #Note5, #Note6, #Note7 {
+  font-style: italic;
+  font-size: 12px;
+  background-color: rgba(0,0,0,0.1);
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+/* -----Carousel 3------ */
+/* Hide the images by default */
+.mySlides {
+  display: none;
 }
 
 /*-----Modal------------- */
@@ -303,6 +320,11 @@ margin-right: 5px;
     li
     {
         margin-left: 0px;
+    }
+
+    /* Caption text */
+    .text {
+      font-size: 0.8em;
     }
 
     /*---MODAL----*/

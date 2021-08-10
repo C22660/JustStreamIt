@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/style.css" />
         <title>JustStreamIt</title>
         <script src="js/main.js" async></script>
-        <!-- <script src="js/mainOld.js" async></script> -->
+        <script src="js/mainOld.js" async></script>
         <!-- <script src="js/exo.js" async></script> -->
         <script src="js/requetes.js" async></script>
     </head>
@@ -42,9 +42,42 @@
             </section>
             
             <section id="carousel1">
-                <div>
                     <h1>Films les mieux notés</h1>
                     <p>Carousel 1</p>
+                    <!-- Thumbnail images -->
+                <div class="visuals">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <!-- <div class="row"> -->
+                    <div class="image_1_C1">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Note IMDb : " />
+                        <p id="Note1">Note1</p>
+
+                    </div>
+                    <div class="image_2_C1">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Note IMDb : " />
+                        <p id="Note2">Note2</p>
+                    </div>
+                    <div class="image_3_C1">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Note IMDb : " />
+                        <p id="Note3">Note3</p>
+                    </div>
+                    <div class="image_4_C1">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Note IMDb : " />
+                        <p id="Note4">Note4</p>
+                    </div>
+                    <div class="image_5_C1">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Note IMDb : " />
+                        <p id="Note5">Note5</p>
+                    </div>
+                    <div class="image_6_C1">
+                        <img  src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Note IMDb : " />
+                        <p id="Note6">Note1</p>
+                    </div>
+                    <div class="image_7_C1">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Note IMDb : " />
+                        <p id="Note7">Note1</p>
+                    </div>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
                     
             </section>
@@ -52,7 +85,6 @@
             <section id="carousel2">
                 <h1>Les films de l'année 2020</h1>
                 <p>Carousel 2</p>
-                <!-- Thumbnail images -->
                 <div class="visuals">
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <!-- <div class="row"> -->
@@ -60,32 +92,77 @@
                         <img class="image1 C2" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="The Woods">
                     </div>
                     <div class="image_2_C2">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Cinque Terre">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="">
                     </div>
                     <div class="image_3_C2">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Mountains and fjords">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="">
                     </div>
                     <div class="image_4_C2">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Northern Lights">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="">
                     </div>
                     <div class="image_5_C2">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Northern Lights">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="">
                     </div>
                     <div class="image_6_C2">
-                        <img  src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Northern Lights">
+                        <img  src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="">
                     </div>
                     <div class="image_7_C2">
-                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="Northern Lights">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="">
                     </div>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
             </section>
      
             <section id="carousel3">
-                <div>
                     <h1>Catégorie 2</h1>
                     <p>Carousel 3</p>
-                </div>
+                    <div class="visuals">
+                        <a class="prev" onclick="otherSlides(-7)">&#10094;</a>
+                        <!-- <div class="row"> -->
+                        <div class="mySlides">
+                            <img class="image1 C2" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 0">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjdjM2JjYTUtODQwYS00M2UyLTkzM2YtMzA5Zjk4MzRkODE4XkEyXkFqcGdeQXVyMTk2NTA3MjU@._V1_UY268_CR87,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 1">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 3">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjdjM2JjYTUtODQwYS00M2UyLTkzM2YtMzA5Zjk4MzRkODE4XkEyXkFqcGdeQXVyMTk2NTA3MjU@._V1_UY268_CR87,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 4">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 5">
+                        </div>
+                        <div class="mySlides">
+                            <img  src="https://m.media-amazon.com/images/M/MV5BMjdjM2JjYTUtODQwYS00M2UyLTkzM2YtMzA5Zjk4MzRkODE4XkEyXkFqcGdeQXVyMTk2NTA3MjU@._V1_UY268_CR87,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 6">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 7">
+                        </div>
+                        <div class="mySlides">
+                            <img class="image1 C2" src="https://m.media-amazon.com/images/M/MV5BMjE0Y2NmOTItNGFiYi00MTBhLWIxMTQtODdlYjNkMjI3MzFmXkEyXkFqcGdeQXVyOTA1MDE3OA@@._V1_UY268_CR16,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 8">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 9">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjE0Y2NmOTItNGFiYi00MTBhLWIxMTQtODdlYjNkMjI3MzFmXkEyXkFqcGdeQXVyOTA1MDE3OA@@._V1_UY268_CR16,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 10">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 11">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjE0Y2NmOTItNGFiYi00MTBhLWIxMTQtODdlYjNkMjI3MzFmXkEyXkFqcGdeQXVyOTA1MDE3OA@@._V1_UY268_CR16,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 12">
+                        </div>
+                        <div class="mySlides">
+                            <img  src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 13">
+                        </div>
+                        <div class="mySlides">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjE0Y2NmOTItNGFiYi00MTBhLWIxMTQtODdlYjNkMjI3MzFmXkEyXkFqcGdeQXVyOTA1MDE3OA@@._V1_UY268_CR16,0,182,268_AL_.jpg" onclick="actionModal()" style="width:100%" alt="index 14">
+                        </div>
+                        <a class="next" onclick="otherSlides(7)">&#10095;</a>
+                    </div>
             </section>
 
             <section id="carousel4">
