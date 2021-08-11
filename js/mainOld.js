@@ -13,25 +13,21 @@ function otherSlides(n) {
 
 function showSlides() {
   let slides = document.getElementsByClassName("mySlides");
-  console.log(indexFirstImageVisible);
-  console.log(indexImageNonevisible);
 
   // check lenght max possible
-  if (indexImageNonevisible > slides.length) {indexImageNonevisible = (slides.length);      indexFirstImageVisible = (slides.length-7)}   
+  if (indexImageNonevisible > slides.length) {indexImageNonevisible = 7;      indexFirstImageVisible = 0}   
   // check lenght min possible
-  if (indexFirstImageVisible < 0) {indexFirstImageVisible = 0;
-    indexImageNonevisible = 7}
+  if (indexFirstImageVisible < 0) {indexFirstImageVisible = slides.length - 7;
+    indexImageNonevisible = slides.length}
 
-  // All images unvisible
+  // Positionne toutes les images invisible
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
-      console.log("unvisible" + i);
   }
 
-  // Only seven next images visible
+  // Et n'affiche que 7 images visible par une boucle limitée de 7 en 7 (7/14, 14/21...)
   for (i = indexFirstImageVisible; i < indexImageNonevisible; i++) {
     slides[i].style.display = "block";
-    console.log("visible " + i);
   }
 
 }
