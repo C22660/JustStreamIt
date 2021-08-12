@@ -5,6 +5,13 @@ body
     margin: 0;
 }
 
+h1
+{
+  text-align: center;
+  padding-top: 5px;
+  font-size: 1.3em;
+}
+
 /* #bloc_page
 {
     width: 900px;
@@ -138,6 +145,12 @@ margin-right: 5px;
 
 
 /*------ Sections------*/
+
+section
+{
+  background-color: rgb(127, 115, 98, 0.6);
+}
+
 .visuals
 {
   display: flex;
@@ -155,11 +168,11 @@ margin-right: 5px;
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: red;
 }
 
 
-#Note1, #Note2, #Note3, #Note4, #Note5, #Note6, #Note7 {
+#Note1, #Note2, #Note3, #Note4, #Note5, #Note6, #Note7, #Note8, #Note9, #Note10, #Note11, #Note12, #Note13, #Note14 {
   font-style: italic;
   font-size: 12px;
   background-color: rgba(0,0,0,0.1);
@@ -171,7 +184,7 @@ margin-right: 5px;
 
 /* -----Carousel 3------ */
 /* Hide the images by default */
-.mySlides {
+.mySlides3, .mySlides1 {
   display: none;
 }
 
@@ -349,6 +362,10 @@ margin-right: 5px;
     }
     .modal-footer {
         width: 100%;
+    }
+
+    h1 {
+      font-size: 0.8em;
     }
 
     /*---- The best film----*/

@@ -1,4 +1,4 @@
-// // Demander des informations détaillées sur un film avec l'identifiant
+// --- Demande les informations détaillées sur un film avec l'identifiant pour enrichir le modal
 
 function allInformations(ident) {
     fetch(`http://localhost:8000/api/v1/titles/${ident}`).then((response) =>
@@ -22,10 +22,47 @@ function allInformations(ident) {
     ).catch(err => console.log('Erreur ' + err));
 }
 
-// allInformations(499549)
+//------------------------------------------------------
+// Carousel 1 - Recherche les films par notation IMBd
 
 //------------------------------------------------------
-// Demander les films de l'année 2020. Utilisation du filtre &page_size=7& pour n'avoir que 7 retour par demande
+// Carousel 3 - Recherche un acteur précisé. Ici, Romy Schneider
+
+function filterNotationMini(imdb_score) {
+
+    fetch(`http://localhost:8000/api/v1/titles/?year=&min_year=&max_year=&imdb_score=&imdb_score_min=${imdb_score}&imdb_score_max=&title=&title_contains=&genre=&genre_contains=&sort_by=&director=&director_contains=&writer=&writer_contains=&actor=&actor_contains=&country=&country_contains=&lang=&lang_contains=&company=&company_contains=&rating=&rating_contains=&page_size=28&`).then((response) =>
+    response.json().then((data) => {
+        console.log(data);
+        let films = data["results"]
+        for (let film of films) {
+            let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/>`;
+        
+            // Se positionne dans la div class="visuals" du carousel 3
+            let elt = document.querySelector("#carousel1 div.visuals");
+            // Se positionne au niveau de <a class="next" pour pouvoir placer la nouvelle Div au dessus
+            newPlace = elt.children.item(1)
+            // Création de la nouvelle Div
+            let newDiv = document.createElement("div");
+            // on y ajoute la classe
+            newDiv.setAttribute('class', 'mySlides1');
+            // On l'ajoute dans le html
+            elt.insertBefore(newDiv, newPlace);
+            // On recupère la nouvelle classe et y ajoute <img src=...
+            // querySelector retourne le 1er trouvé, soit la dernière classe créée
+            document.querySelector(".mySlides1").innerHTML = affichage
+        };
+        // On avance de +7 pour afficher les premières images collectées
+        carousel1.moreSlides(+7);
+        })
+        ).catch(err => console.log('Erreur ' + err));
+    }
+        
+        
+    filterNotationMini(9)
+
+
+//------------------------------------------------------
+// Carousel 2 - Demande les films de l'année 2020. Utilisation du filtre &page_size=7& pour n'avoir que 7 retour par demande
 
 function filmsOfTheYear(pageIndex) {
 
@@ -53,7 +90,7 @@ function filmsOfTheYear(pageIndex) {
 filmsOfTheYear(1)
 
 //------------------------------------------------------
-// Spécial Romy Schneider
+// Carousel 3 - Recherche un acteur précisé. Ici, Romy Schneider
 
 function fimsByActor(surname, name) {
 
@@ -62,7 +99,7 @@ function fimsByActor(surname, name) {
         console.log(data);
         let films = data["results"]
         for (let film of films) {
-            let affichage = `<img src=${film.image_url} onclick="actionModal(${film.id})" style="width:100%" alt=${film.title}/>`;
+            let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/>`;
         
             // Se positionne dans la div class="visuals" du carousel 3
             let elt = document.querySelector("#carousel3 div.visuals");
@@ -71,12 +108,15 @@ function fimsByActor(surname, name) {
             // Création de la nouvelle Div
             let newDiv = document.createElement("div");
             // on y ajoute la classe
-            newDiv.setAttribute('class', 'mySlides');
+            newDiv.setAttribute('class', 'mySlides3');
             // On l'ajoute dans le html
             elt.insertBefore(newDiv, newPlace);
             // On recupère la nouvelle classe et y ajoute <img src=...
-            document.querySelector(".mySlides").innerHTML = affichage
+            // querySelector retourne le 1er trouvé, soit la dernière classe créée
+            document.querySelector(".mySlides3").innerHTML = affichage
         };
+        // On avance de +7 pour afficher les premières images collectées
+        carousel3.moreSlides(+7);
         })
         ).catch(err => console.log('Erreur ' + err));
     }
