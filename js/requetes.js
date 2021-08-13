@@ -32,11 +32,26 @@ function filterNotationMini(imdb_score) {
 
     fetch(`http://localhost:8000/api/v1/titles/?year=&min_year=&max_year=&imdb_score=&imdb_score_min=${imdb_score}&imdb_score_max=&title=&title_contains=&genre=&genre_contains=&sort_by=&director=&director_contains=&writer=&writer_contains=&actor=&actor_contains=&country=&country_contains=&lang=&lang_contains=&company=&company_contains=&rating=&rating_contains=&page_size=28&`).then((response) =>
     response.json().then((data) => {
-        console.log(data);
-        let films = data["results"]
-        for (let film of films) {
+        let films = data["results"];
+        // classement selon imdb_score
+        let tri = films.sort(function (a, b) {
+        return a.imdb_score - b.imdb_score;
+        });
+
+        responseSorted = Object.values(tri)
+        responseSortedReversed = Object.values(tri).reverse()
+
+        // Mise en place de l'image du meilleur film
+        document.querySelector(".bestFilmImage").innerHTML = `<img class="theBestFilm" src=${responseSortedReversed[0].image_url}  "onclick="allInformations(${responseSortedReversed[0]["id"]})" style="width:100%" alt=${responseSortedReversed[0].title}/>`
+        // Mise en place du titre du meilleur film à côté du bouton play de l'image 
+        document.querySelector(".titleBestFilm p").innerHTML = responseSortedReversed[0].title
+        
+        // Création des div des vignettes du carousel
+        for (let film of responseSorted) {
             let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/>`;
         
+            // !!! en raison du mode de mise en place des div, reverse() est inutile.
+
             // Se positionne dans la div class="visuals" du carousel 3
             let elt = document.querySelector("#carousel1 div.visuals");
             // Se positionne au niveau de <a class="next" pour pouvoir placer la nouvelle Div au dessus
@@ -50,9 +65,9 @@ function filterNotationMini(imdb_score) {
             // On recupère la nouvelle classe et y ajoute <img src=...
             // querySelector retourne le 1er trouvé, soit la dernière classe créée
             document.querySelector(".mySlides1").innerHTML = affichage
-        };
-        // On avance de +7 pour afficher les premières images collectées
-        carousel1.moreSlides(+7);
+            };
+        // On avance de +0 pour afficher les premières images collectées
+        carousel1.moreSlides(0);
         })
         ).catch(err => console.log('Erreur ' + err));
     }
@@ -96,7 +111,6 @@ function fimsByActor(surname, name) {
 
     fetch(`http://localhost:8000/api/v1/titles/?year=&min_year=&max_year=&imdb_score=&imdb_score_min=&imdb_score_max=&title=&title_contains=&genre=&genre_contains=&sort_by=&director=&director_contains=&writer=&writer_contains=&actor=${surname}+${name}&actor_contains=&country=&country_contains=&lang=&lang_contains=&company=&company_contains=&rating=&rating_contains=&page_size=28&`).then((response) =>
     response.json().then((data) => {
-        console.log(data);
         let films = data["results"]
         for (let film of films) {
             let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/>`;
@@ -115,8 +129,8 @@ function fimsByActor(surname, name) {
             // querySelector retourne le 1er trouvé, soit la dernière classe créée
             document.querySelector(".mySlides3").innerHTML = affichage
         };
-        // On avance de +7 pour afficher les premières images collectées
-        carousel3.moreSlides(+7);
+        // On avance de +0 pour afficher les premières images collectées
+        carousel3.moreSlides(+0);
         })
         ).catch(err => console.log('Erreur ' + err));
     }
