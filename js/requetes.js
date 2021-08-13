@@ -3,7 +3,6 @@
 function allInformations(ident) {
     fetch(`http://localhost:8000/api/v1/titles/${ident}`).then((response) =>
     response.json().then((data) => {
-        console.log(data);
         let imageFilm=data.image_url
         let title=data.original_title
         let genre=data.genres
@@ -25,9 +24,6 @@ function allInformations(ident) {
 //------------------------------------------------------
 // Carousel 1 - Recherche les films par notation IMBd
 
-//------------------------------------------------------
-// Carousel 3 - Recherche un acteur précisé. Ici, Romy Schneider
-
 function filterNotationMini(imdb_score) {
 
     fetch(`http://localhost:8000/api/v1/titles/?year=&min_year=&max_year=&imdb_score=&imdb_score_min=${imdb_score}&imdb_score_max=&title=&title_contains=&genre=&genre_contains=&sort_by=&director=&director_contains=&writer=&writer_contains=&actor=&actor_contains=&country=&country_contains=&lang=&lang_contains=&company=&company_contains=&rating=&rating_contains=&page_size=28&`).then((response) =>
@@ -48,7 +44,7 @@ function filterNotationMini(imdb_score) {
         
         // Création des div des vignettes du carousel
         for (let film of responseSorted) {
-            let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/>`;
+            let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/><br><p id="Note">${film.imdb_score}</p>`;
         
             // !!! en raison du mode de mise en place des div, reverse() est inutile.
 
@@ -66,10 +62,10 @@ function filterNotationMini(imdb_score) {
             // querySelector retourne le 1er trouvé, soit la dernière classe créée
             document.querySelector(".mySlides1").innerHTML = affichage
             };
-        // On avance de +0 pour afficher les premières images collectées
+        // On avance de +0 pour afficher les 7 premières images collectées
         carousel1.moreSlides(0);
         })
-        ).catch(err => console.log('Erreur ' + err));
+        ).catch(err => console.log('Erreur requête carousel 1' + err));
     }
         
         
@@ -99,10 +95,52 @@ function filmsOfTheYear(pageIndex) {
         document.querySelector(".image_7_C2").innerHTML = `<img src="${films[6]["image_url"]}" onclick="allInformations(${films[6]["id"]})" style="width:100%" alt="${films[6]["title"]}">`;
 
     })
-    ).catch(err => console.log('Erreur ' + err));
+    ).catch(err => console.log('Erreur requête carousel 2' + err));
 }
 
 filmsOfTheYear(1)
+
+//------------------------------------------------------
+// Carousel 4 - Recherche d'un genre précisé. Ici, comédies françaises
+
+function fimsByGenreAndCountry(genre, country, since) {
+
+    fetch(`http://localhost:8000/api/v1/titles/?year=&min_year=${since}&max_year=&imdb_score=&imdb_score_min=&imdb_score_max=&title=&title_contains=&genre=${genre}&genre_contains=&sort_by=&director=&director_contains=&writer=&writer_contains=&actor=&actor_contains=&country=${country}&country_contains=${country}&lang=&lang_contains=&company=&company_contains=&rating=&rating_contains=&page_size=28&`).then((response) =>
+    response.json().then((data) => {
+        let films = data["results"]
+
+        // classement selon imdb_score
+        let tri = films.sort(function (a, b) {
+            return a.imdb_score - b.imdb_score;
+            });
+    
+            responseSorted = Object.values(tri)
+
+        for (let film of responseSorted) {
+            let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/>`;
+        
+            // Se positionne dans la div class="visuals" du carousel 3
+            let elt = document.querySelector("#carousel4 div.visuals");
+            // Se positionne au niveau de <a class="next" pour pouvoir placer la nouvelle Div au dessus
+            newPlace = elt.children.item(1)
+            // Création de la nouvelle Div
+            let newDiv = document.createElement("div");
+            // on y ajoute la classe
+            newDiv.setAttribute('class', 'mySlides4');
+            // On l'ajoute dans le html
+            elt.insertBefore(newDiv, newPlace);
+            // On recupère la nouvelle classe et y ajoute <img src=...
+            // querySelector retourne le 1er trouvé, soit la dernière classe créée
+            document.querySelector(".mySlides4").innerHTML = affichage
+        };
+        // On avance de +0 pour afficher les premières images collectées
+        carousel4.moreSlides(+0);
+        })
+        ).catch(err => console.log('Erreur requête carousel 4' + err));
+    }
+        
+    // genre, pays, depuis
+    fimsByGenreAndCountry("Comedy", "France", "2000")
 
 //------------------------------------------------------
 // Carousel 3 - Recherche un acteur précisé. Ici, Romy Schneider
@@ -112,7 +150,15 @@ function fimsByActor(surname, name) {
     fetch(`http://localhost:8000/api/v1/titles/?year=&min_year=&max_year=&imdb_score=&imdb_score_min=&imdb_score_max=&title=&title_contains=&genre=&genre_contains=&sort_by=&director=&director_contains=&writer=&writer_contains=&actor=${surname}+${name}&actor_contains=&country=&country_contains=&lang=&lang_contains=&company=&company_contains=&rating=&rating_contains=&page_size=28&`).then((response) =>
     response.json().then((data) => {
         let films = data["results"]
-        for (let film of films) {
+
+        // classement selon imdb_score
+        let tri = films.sort(function (a, b) {
+            return a.imdb_score - b.imdb_score;
+            });
+    
+            responseSorted = Object.values(tri)
+
+        for (let film of responseSorted) {
             let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/>`;
         
             // Se positionne dans la div class="visuals" du carousel 3
@@ -132,7 +178,7 @@ function fimsByActor(surname, name) {
         // On avance de +0 pour afficher les premières images collectées
         carousel3.moreSlides(+0);
         })
-        ).catch(err => console.log('Erreur ' + err));
+        ).catch(err => console.log('Erreur requête carousel 3' + err));
     }
         
         

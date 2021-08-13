@@ -31,8 +31,9 @@ class SlidesManagement {
             slides[i].style.display = "none";
         }
 
-        // Et n'affiche que 7 images visible par une boucle limitée de 7 en 7 (7/14, 14/21...)
+        // Et n'affiche que 7 images visibles par une boucle limitée de 7 en 7 (7/14, 14/21...)
         for (let e = this.indexFirstImageVisible; e < this.indexImageNoneVisible; e++) {
+            console.log(slides[e])
             slides[e].style.display = "block";
         }
 
@@ -41,10 +42,12 @@ class SlidesManagement {
 }
 
 const carousel1 = new SlidesManagement("mySlides1");
-carousel1.openSlides();
-
 const carousel3 = new SlidesManagement("mySlides3");
+const carousel4 = new SlidesManagement("mySlides4");
+
 carousel1.openSlides();
+carousel3.openSlides();
+carousel4.openSlides();
 
 // --- Contrôle le carousel 2.  Cette fois ci, c'est le numéro de la page qui est adressé à la requête.
 // --- Cela remplacera les 7 images au coup par coup.
