@@ -42,27 +42,11 @@ class SlidesManagement {
 }
 
 const carousel1 = new SlidesManagement("mySlides1");
+const carousel2 = new SlidesManagement("mySlides2");
 const carousel3 = new SlidesManagement("mySlides3");
 const carousel4 = new SlidesManagement("mySlides4");
 
 carousel1.openSlides();
+carousel2.openSlides();
 carousel3.openSlides();
 carousel4.openSlides();
-
-// --- Contrôle le carousel 2.  Cette fois ci, c'est le numéro de la page qui est adressé à la requête.
-// --- Cela remplacera les 7 images au coup par coup.
-let pageIndex = 1;
-nextSlides(pageIndex);
-
-function plusSlides(n) {
-  nextSlides(pageIndex += n);
-}
-
-function currentSlide(n) {
-  nextSlides(pageIndex = n);
-}
-
-function nextSlides(n) {
-if (n <= 0) {pageIndex = 1;}
-filmsOfTheYear(pageIndex)
-}

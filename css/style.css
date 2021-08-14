@@ -109,7 +109,9 @@ li
 }
 
 .titleBestFilm p {
-margin-right: 5px;
+  margin-right: 5px;
+  color: brown;
+  background-color: rgb(255, 255, 255, 0.1);
 }
 
 .titleBestFilm img {
