@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <!-- En-tête de la page -->
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="css/style.css" />
         <title>JustStreamIt</title>
         <script src="js/modalController.js" async></script>
         <script src="js/carouselsController.js" async></script>
-        <!-- <script src="js/exo.js" async></script> -->
         <script src="js/requetes.js" async></script>
     </head>
 
     <body>
         <div id="bloc_page">
-            <!-- Corps de la page -->
 
     		<header>
     		    <div class="logo">
@@ -32,12 +28,15 @@
     		</header>
            
             <section class="bestFilmBody">
-                <div class="bestFilmImage" >
+                <div class="bestFilmImage">
                     <img class="theBestFilm" src="https://m.media-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" style="width:100%" alt="The best film"/>
                 </div>
                 <div class="titleBestFilm">
                     <p>The best film</p>
-                    <img src="css/playbutton1_78491.svg" style="width:5%" alt="play_button"/>
+                    <img src="css/playbutton1_78491.svg" onclick="" style="width:5%" alt="play_button"/>
+                </div>
+                <div class="resumeBestFilm">
+                    <p>Résumé</p>
                 </div>
             </section>
             
@@ -91,7 +90,7 @@
                 </div>
                 <div class="modal-core">
                     <div class="space-film">
-                        <img id="imageFilm" src=""/>
+                        <img id="imageFilm" src="https://m.media-amazon.com/images/M/MV5BNDEyYTA5OWEtYjNiYS00MGZlLThjYzEtMTc1Zjk2NDRmZmYxXkEyXkFqcGdeQXVyNzIwNTQyMw@@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="image de titreFilm" />
                     </div>
                     <div class="modal-text">
                         <div id="genre"></div>
@@ -115,5 +114,3 @@
 
     </body>
 </html>
-
-    </body>

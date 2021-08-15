@@ -103,9 +103,21 @@ li
   width: 70%;
 }
 
+.bestFilmBody .resumeBestFilm {
+  z-index: 1;
+  position: absolute;
+  font-size: 1em;
+  font-style: italic;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 60%;
+  color: white;
+  width: 70%;
+}
+
 .titleBestFilm {
   display: flex;
-  align-items: space-between;
 }
 
 .titleBestFilm p {
@@ -197,10 +209,6 @@ section
   height: auto;
 }
 
-/* #genre #date #rated #score #director #actors #duration #country #boxOffice #resume {
-  margin-top: 5px;
-} */
-
 /* The Close Button */
 .close {
   color: white;
@@ -226,10 +234,6 @@ section
 #title {
   display: block;
   font-size: 1.5em;
-  /* margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px; */
   font-weight: bold;
 }
 
@@ -250,7 +254,6 @@ section
 
 /* Modal Footer */
 .modal-footer p {
-  /* padding: 2px 2px; */
   background-color: rgb(98,117,127);
   color: white;
   font-style: italic;
@@ -307,6 +310,18 @@ section
     li
     {
         margin-left: 0px;
+    }
+
+    .bestFilmBody .titleBestFilm {
+      top: 10%;
+    }
+    
+    .bestFilmBody .resumeBestFilm {
+      top: 45%;
+    }
+
+    .resumeBestFilm p, .titleBestFilm p {
+      font-size: 0.8em;
     }
 
     /* Caption text */

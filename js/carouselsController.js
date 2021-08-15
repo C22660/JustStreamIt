@@ -33,7 +33,6 @@ class SlidesManagement {
 
         // Et n'affiche que 7 images visibles par une boucle limitée de 7 en 7 (7/14, 14/21...)
         for (let e = this.indexFirstImageVisible; e < this.indexImageNoneVisible; e++) {
-            console.log(slides[e])
             slides[e].style.display = "block";
         }
 

@@ -41,7 +41,12 @@ function filterNotationMini(imdb_score) {
         document.querySelector(".bestFilmImage").innerHTML = `<img class="theBestFilm" src=${responseSortedReversed[0].image_url}  "onclick="allInformations(${responseSortedReversed[0]["id"]})" style="width:100%" alt=${responseSortedReversed[0].title}/>`
         // Mise en place du titre du meilleur film à côté du bouton play de l'image 
         document.querySelector(".titleBestFilm p").innerHTML = responseSortedReversed[0].title
+        // modification du onclik du bouton play pour ouvrir le modal
+        document.querySelector(".titleBestFilm img").setAttribute("onclick",`allInformations(${responseSortedReversed[0].id})`);
         
+        // on adresse l'ident pour chercher le résumé
+        resumeResearch(responseSortedReversed[0].id)
+
         // Création des div des vignettes du carousel
         for (let film of responseSorted) {
             let affichage = `<img src=${film.image_url} onclick="allInformations(${film.id})" style="width:100%" alt=${film.title}/><br><p id="Note">${film.imdb_score}</p>`;
@@ -61,13 +66,24 @@ function filterNotationMini(imdb_score) {
             // On recupère la nouvelle classe et y ajoute <img src=...
             // querySelector retourne le 1er trouvé, soit la dernière classe créée
             document.querySelector(".mySlides1").innerHTML = affichage
-            };
+
+        };
         // On avance de +0 pour afficher les 7 premières images collectées
         carousel1.moreSlides(0);
         })
         ).catch(err => console.log('Erreur requête carousel 1' + err));
     }
         
+
+    function resumeResearch(ident) {
+        fetch(`http://localhost:8000/api/v1/titles/${ident}`).then((response) =>
+        response.json().then((data) => {
+            let resume=data.description
+            // Mise en place du résumé du meilleur film sous le bouton play de l'image 
+            document.querySelector(".resumeBestFilm p").innerHTML = resume 
+        })
+        ).catch(err => console.log('Erreur recherché résumé ' + err));
+    }
         
     filterNotationMini(9)
 
