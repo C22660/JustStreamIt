@@ -1,4 +1,4 @@
-// --- Contrôle les carousel 1, 3 et 4 par l'intermédiaire d'un classe
+// --- Contrôle les carousel par l'intermédiaire d'un classe
 // --- Pour afficher les 7 slides suivants à partir du Onclick sur la base d'un import globale des images en une fois
 // --- Toutes les vignettes étant chargées, gestion de l'affichage par la modification du style.display none ou block
 
@@ -6,7 +6,6 @@ class SlidesManagement {
     constructor(classSlide) {
         this.indexFirstImageVisible = 0;
         this.indexImageNoneVisible = 7;
-        //this.numberOfElements = numberOfElements;
         this.classSlide = classSlide;
     } 
 
@@ -26,15 +25,18 @@ class SlidesManagement {
         if (this.indexFirstImageVisible < 0) {this.indexFirstImageVisible = slides.length - 7;
             this.indexImageNoneVisible = slides.length}
 
-        // Positionne toutes les images invisible
+        // Positionne toutes les images invisibles
         for (let i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
 
         // Et n'affiche que 7 images visibles par une boucle limitée de 7 en 7 (7/14, 14/21...)
-        for (let e = this.indexFirstImageVisible; e < this.indexImageNoneVisible; e++) {
-            slides[e].style.display = "block";
-        }
+        // Les div n'étant créées que par requetes.js, mise en place d'un if pour vérifier si présentent
+        // évite un mesg d'anomalie lors du premier chargement de la page
+        if (slides.length != 0) {
+            for (let e = this.indexFirstImageVisible; e < this.indexImageNoneVisible; e++) {
+                slides[e].style.display = "block";
+        }}
 
     }
 
